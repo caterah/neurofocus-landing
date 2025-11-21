@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NeuroFocus - AI-powered reading companion that transforms lengthy content into personalized audio summaries">
+    <title>NeuroFocus - Your AI Reading Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .hero-image {
+            margin-top: 50px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .features {
+            padding: 100px 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2d3748;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 18px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+        }
+
+        .email-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+
+        .success-message {
+            display: none;
+            background: white;
+            color: #667eea;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Read Less. Learn More.</h1>
+            <p>Transform hours of reading into personalized audio summaries that fit your commute. NeuroFocus uses AI to deliver what matters most to your career.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="scrollToCTA()">Join Early Access</button>
+                <a href="#features" class="btn btn-secondary">See How It Works</a>
+            </div>
+            <svg class="hero-image" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="300" fill="rgba(255,255,255,0.1)" rx="20"/>
+                <circle cx="200" cy="150" r="80" fill="rgba(255,255,255,0.2)"/>
+                <path d="M160 150 L180 170 L220 130" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="250" y="100" width="100" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
+                <rect x="250" y="130" width="80" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
+                <rect x="250" y="160" width="90" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Built for Busy Professionals</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Personalization</h3>
+                    <p>AI learns your role, interests, and goals to highlight insights relevant to YOU. No more wading through irrelevant content.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Perfect Timing</h3>
+                    <p>Summaries match your available time. 10-minute commute? Get a 10-minute brief. AI adjusts depth automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h3>Audio-First Learning</h3>
+                    <p>Natural voice narration lets you absorb insights while driving, exercising, or cooking. Your eyes stay free.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Multi-Source Intelligence</h3>
+                    <p>Connects industry reports, news, research papers, and your saved articles into coherent daily briefings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Action-Oriented</h3>
+                    <p>Don't just learn—act. Get specific takeaways and recommendations based on your current projects and challenges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy Protected</h3>
+                    <p>Your reading habits and professional interests stay private. Enterprise-grade security for your data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Reclaim Your Time?</h2>
+            <p>Join 2,000+ professionals on the early access list. Get 3 months free when we launch.</p>
+            <form class="email-form" onsubmit="handleSubmit(event)">
+                <input 
+                    type="email" 
+                    class="email-input" 
+                    placeholder="Enter your email" 
+                    required
+                    id="emailInput"
+                    aria-label="Email address"
+                >
+                <button type="submit" class="btn btn-primary">Get Early Access</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                🎉 Welcome aboard! Check your email for next steps.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 NeuroFocus. All rights reserved. | Built for innovation assignment.</p>
+    </footer>
+
+    <script>
+        function scrollToCTA() {
+            document.querySelector('.cta-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            const successMsg = document.getElementById('successMessage');
+            
+            // In a real app, you would send this to a backend
+            // For demo purposes, we'll just show success
+            console.log('Email captured:', email);
+            
+            // Show success message
+            successMsg.style.display = 'block';
+            document.getElementById('emailInput').value = '';
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
