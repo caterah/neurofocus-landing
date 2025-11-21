@@ -84,10 +84,15 @@
             color: #667eea;
         }
 
-        .hero-image {
+        .hero-mockup {
             margin-top: 50px;
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         .features {
@@ -126,7 +131,8 @@
         }
 
         .feature-icon {
-            font-size: 3rem;
+            width: 80px;
+            height: 80px;
             margin-bottom: 20px;
         }
 
@@ -231,14 +237,70 @@
                 <button class="btn btn-primary" onclick="scrollToCTA()">Join Early Access</button>
                 <a href="#features" class="btn btn-secondary">See How It Works</a>
             </div>
-            <svg class="hero-image" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="300" fill="rgba(255,255,255,0.1)" rx="20"/>
-                <circle cx="200" cy="150" r="80" fill="rgba(255,255,255,0.2)"/>
-                <path d="M160 150 L180 170 L220 130" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="250" y="100" width="100" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
-                <rect x="250" y="130" width="80" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
-                <rect x="250" y="160" width="90" height="8" fill="rgba(255,255,255,0.3)" rx="4"/>
-            </svg>
+            
+            <!-- Hero Illustration -->
+            <div class="hero-mockup">
+                <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background -->
+                    <defs>
+                        <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f0f4f8;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.8" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Headphones -->
+                    <ellipse cx="150" cy="200" rx="60" ry="60" fill="rgba(255,255,255,0.9)"/>
+                    <ellipse cx="550" cy="200" rx="60" ry="60" fill="rgba(255,255,255,0.9)"/>
+                    <path d="M 210 150 Q 350 80 490 150" stroke="rgba(255,255,255,0.9)" stroke-width="25" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- Phone -->
+                    <rect x="250" y="100" width="200" height="340" rx="20" fill="url(#phoneGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                    
+                    <!-- Screen -->
+                    <rect x="265" y="130" width="170" height="280" rx="10" fill="#1a202c"/>
+                    
+                    <!-- App Header -->
+                    <text x="350" y="165" font-size="18" fill="white" text-anchor="middle" font-weight="bold">NeuroFocus</text>
+                    <circle cx="410" cy="158" r="8" fill="#667eea"/>
+                    
+                    <!-- Audio Waveform -->
+                    <g opacity="0.9">
+                        <rect x="280" y="210" width="6" height="30" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="295" y="200" width="6" height="50" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="310" y="190" width="6" height="70" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="325" y="195" width="6" height="60" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="340" y="205" width="6" height="40" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="355" y="200" width="6" height="50" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="370" y="190" width="6" height="70" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="385" y="200" width="6" height="50" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="400" y="210" width="6" height="30" rx="3" fill="url(#waveGrad)"/>
+                        <rect x="415" y="205" width="6" height="40" rx="3" fill="url(#waveGrad)"/>
+                    </g>
+                    
+                    <!-- Play Button -->
+                    <circle cx="350" cy="300" r="40" fill="#667eea"/>
+                    <path d="M 340 285 L 340 315 L 365 300 Z" fill="white"/>
+                    
+                    <!-- Progress Bar -->
+                    <rect x="280" y="365" width="140" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+                    <rect x="280" y="365" width="85" height="8" rx="4" fill="#667eea"/>
+                    
+                    <!-- Time -->
+                    <text x="280" y="390" font-size="14" fill="rgba(255,255,255,0.7)">2:34</text>
+                    <text x="395" y="390" font-size="14" fill="rgba(255,255,255,0.7)">8:15</text>
+                    
+                    <!-- Decorative circles -->
+                    <circle cx="100" cy="100" r="15" fill="rgba(255,255,255,0.2)"/>
+                    <circle cx="600" cy="320" r="20" fill="rgba(255,255,255,0.15)"/>
+                    <circle cx="150" cy="350" r="10" fill="rgba(255,255,255,0.25)"/>
+                    <circle cx="550" cy="120" r="18" fill="rgba(255,255,255,0.2)"/>
+                </svg>
+            </div>
         </div>
     </section>
 
@@ -248,32 +310,112 @@
             <h2 class="section-title">Built for Busy Professionals</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
+                    <svg class="feature-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#grad1)" opacity="0.1"/>
+                        <circle cx="50" cy="35" r="18" fill="url(#grad1)"/>
+                        <path d="M 25 65 Q 50 55 75 65 L 75 82 Q 50 92 25 82 Z" fill="url(#grad1)"/>
+                        <circle cx="45" cy="32" r="3" fill="white"/>
+                        <circle cx="55" cy="32" r="3" fill="white"/>
+                        <path d="M 43 40 Q 50 43 57 40" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
                     <h3>Smart Personalization</h3>
                     <p>AI learns your role, interests, and goals to highlight insights relevant to YOU. No more wading through irrelevant content.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
+                    <svg class="feature-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#grad2)" opacity="0.1"/>
+                        <circle cx="50" cy="50" r="38" stroke="url(#grad2)" stroke-width="5" fill="none"/>
+                        <path d="M 50 20 L 50 50 L 72 62" stroke="url(#grad2)" stroke-width="5" stroke-linecap="round" fill="none"/>
+                        <circle cx="50" cy="50" r="4" fill="url(#grad2)"/>
+                    </svg>
                     <h3>Perfect Timing</h3>
                     <p>Summaries match your available time. 10-minute commute? Get a 10-minute brief. AI adjusts depth automatically.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">🎧</div>
+                    <svg class="feature-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#grad3)" opacity="0.1"/>
+                        <circle cx="30" cy="50" r="18" fill="url(#grad3)"/>
+                        <circle cx="70" cy="50" r="18" fill="url(#grad3)"/>
+                        <path d="M 48 35 Q 50 28 52 35" stroke="url(#grad3)" stroke-width="6" fill="none" stroke-linecap="round"/>
+                        <rect x="46" y="20" width="8" height="12" rx="4" fill="url(#grad3)"/>
+                    </svg>
                     <h3>Audio-First Learning</h3>
                     <p>Natural voice narration lets you absorb insights while driving, exercising, or cooking. Your eyes stay free.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">📚</div>
+                    <svg class="feature-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#grad4)" opacity="0.1"/>
+                        <rect x="25" y="28" width="50" height="60" rx="4" fill="url(#grad4)"/>
+                        <rect x="30" y="35" width="40" height="4" rx="2" fill="white" opacity="0.9"/>
+                        <rect x="30" y="43" width="40" height="4" rx="2" fill="white" opacity="0.9"/>
+                        <rect x="30" y="51" width="30" height="4" rx="2" fill="white" opacity="0.9"/>
+                        <rect x="30" y="59" width="35" height="4" rx="2" fill="white" opacity="0.9"/>
+                        <rect x="30" y="67" width="40" height="4" rx="2" fill="white" opacity="0.9"/>
+                        <rect x="30" y="75" width="25" height="4" rx="2" fill="white" opacity="0.9"/>
+                    </svg>
                     <h3>Multi-Source Intelligence</h3>
                     <p>Connects industry reports, news, research papers, and your saved articles into coherent daily briefings.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">💡</div>
+                    <svg class="feature-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#grad5)" opacity="0.1"/>
+                        <circle cx="50" cy="40" r="22" fill="none" stroke="url(#grad5)" stroke-width="5"/>
+                        <path d="M 50 62 L 50 85" stroke="url(#grad5)" stroke-width="5" stroke-linecap="round"/>
+                        <path d="M 32 72 L 50 85 L 68 72" stroke="url(#grad5)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <path d="M 45 35 L 48 40 L 55 32" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     <h3>Action-Oriented</h3>
                     <p>Don't just learn—act. Get specific takeaways and recommendations based on your current projects and challenges.</p>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
+                    <svg class="feature-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#grad6)" opacity="0.1"/>
+                        <rect x="35" y="30" width="30" height="45" rx="4" fill="url(#grad6)"/>
+                        <circle cx="50" cy="58" r="10" fill="white"/>
+                        <rect x="46" y="58" width="8" height="15" rx="2" fill="white"/>
+                        <path d="M 42 45 L 42 35 L 58 35 L 58 45" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    </svg>
                     <h3>Privacy Protected</h3>
                     <p>Your reading habits and professional interests stay private. Enterprise-grade security for your data.</p>
                 </div>
@@ -318,15 +460,11 @@
             const email = document.getElementById('emailInput').value;
             const successMsg = document.getElementById('successMessage');
             
-            // In a real app, you would send this to a backend
-            // For demo purposes, we'll just show success
             console.log('Email captured:', email);
             
-            // Show success message
             successMsg.style.display = 'block';
             document.getElementById('emailInput').value = '';
             
-            // Hide after 5 seconds
             setTimeout(() => {
                 successMsg.style.display = 'none';
             }, 5000);
