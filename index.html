@@ -7,18 +7,18 @@
     
     <meta property="og:title" content="NeuroFocus - Read Less. Learn More.">
     <meta property="og:description" content="Transform reading into listening. AI-powered audio summaries tailored to your career.">
-    <meta property="og:image" content="neurofocus-banner.jpg"> 
-    <meta property="og:url" content="https://neurofocus.com">
+    <meta property="og:image" content="neurofocus-banner.jpg"> <meta property="og:url" content="https://neurofocus.com">
     <meta name="twitter:card" content="summary_large_image">
     
-    <title>NeuroFocus - Your AI Reading Companion | Transform Reading to Audio</title>
+    <title>NeuroFocus - Your AI Reading Companion</title>
     <style>
+        /* ... [Keep all previous CSS exactly the same] ... */
+        
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --text-dark: #2d3748;
             --text-light: #4a5568;
             --accent: #667eea;
-            --success: #48bb78;
         }
 
         * {
@@ -135,7 +135,6 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 30px;
         }
 
         .btn {
@@ -174,84 +173,17 @@
             border-color: white;
         }
 
-        /* Social Proof */
-        .social-proof {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .user-count {
-            font-size: 1rem;
-            opacity: 0.9;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .avatars {
-            display: flex;
-            margin-right: 10px;
-        }
-
-        .avatar {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            border: 2px solid white;
-            margin-left: -10px;
-            background: rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-        }
-
-        .avatar:first-child {
-            margin-left: 0;
-        }
-
-        .testimonial-quote {
-            font-style: italic;
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            opacity: 0.9;
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .testimonial-quote::before,
-        .testimonial-quote::after {
-            content: '"';
-            font-size: 2rem;
-            opacity: 0.7;
-            position: absolute;
-        }
-
-        .testimonial-quote::before {
-            top: -10px;
-            left: 0;
-        }
-
-        .testimonial-quote::after {
-            bottom: -20px;
-            right: 0;
-        }
-
         /* Mockup Container */
         .hero-mockup {
             margin-top: 60px;
             max-width: 800px;
             width: 100%;
+            /* Removed heavy blur padding to make the image pop more */
             border-radius: 20px;
             box-shadow: 0 30px 80px rgba(0,0,0,0.25);
             transform: perspective(1000px) rotateX(2deg);
             transition: transform 0.5s ease;
-            overflow: hidden;
+            overflow: hidden; /* Ensures image stays within radius */
         }
 
         .hero-mockup:hover {
@@ -324,46 +256,6 @@
             line-height: 1.7;
         }
 
-        /* Benefits Section */
-        .benefits {
-            padding: 100px 20px;
-            background: white;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            flex-shrink: 0;
-            background: var(--primary-gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .benefit-content h3 {
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-
-        .benefit-content p {
-            color: var(--text-light);
-        }
-
         /* CTA Section */
         .cta-section {
             background: var(--primary-gradient);
@@ -387,9 +279,6 @@
             opacity: 0.95;
             position: relative;
             z-index: 2;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .email-form {
@@ -418,16 +307,10 @@
             box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
         }
 
-        .form-note {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
         .success-message {
             display: none;
             background: rgba(255, 255, 255, 0.95);
-            color: var(--success);
+            color: #667eea;
             padding: 15px 30px;
             border-radius: 50px;
             margin-top: 30px;
@@ -469,8 +352,6 @@
             .cta-buttons { flex-direction: column; width: 100%; }
             .btn { width: 100%; max-width: 300px; }
             .navbar { padding: 15px 20px; }
-            .email-form { flex-direction: column; }
-            .email-input { min-width: 100%; }
         }
     </style>
 </head>
@@ -500,30 +381,15 @@
 
     <section class="hero">
         <div class="container">
-            <h1 class="hidden-el">Turn Reading Time Into Thinking Time</h1>
-            <p class="hidden-el" style="transition-delay: 100ms;">AI-powered audio summaries that transform hours of reading into minutes of listening. Get the key insights from business books, reports, and articles tailored to your career goals.</p>
+            <h1 class="hidden-el">Read Less.<br>Learn More.</h1>
+            <p class="hidden-el" style="transition-delay: 100ms;">Transform hours of reading into personalized audio summaries. AI-curated insights tailored specifically to your career goals.</p>
             
             <div class="cta-buttons hidden-el" style="transition-delay: 200ms;">
-                <button class="btn btn-primary" onclick="scrollToCTA()">Start Free Trial</button>
+                <button class="btn btn-primary" onclick="scrollToCTA()">Join Early Access</button>
                 <a href="#features" class="btn btn-secondary">See How It Works</a>
             </div>
             
-            <div class="social-proof hidden-el" style="transition-delay: 300ms;">
-                <div class="user-count">
-                    <div class="avatars">
-                        <div class="avatar">JD</div>
-                        <div class="avatar">SM</div>
-                        <div class="avatar">AK</div>
-                        <div class="avatar">+97</div>
-                    </div>
-                    <span>Join 2,000+ professionals already saving time</span>
-                </div>
-                <div class="testimonial-quote">
-                    "NeuroFocus saved me 5+ hours per week. I'm finally staying current with industry trends without sacrificing family time."
-                </div>
-            </div>
-            
-            <div class="hero-mockup hidden-el" style="transition-delay: 400ms;">
+            <div class="hero-mockup hidden-el" style="transition-delay: 300ms;">
                 <img 
                     src="neurofocus-banner.jpg" 
                     alt="NeuroFocus Book to Audio Concept" 
@@ -645,58 +511,13 @@
         </div>
     </section>
 
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title hidden-el">What You'll Gain</h2>
-            <p class="section-subtitle hidden-el">Join thousands of professionals who have transformed their learning habits</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item hidden-el">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>5+ Hours Saved Weekly</h3>
-                        <p>Recover time spent reading by converting it to listening during your commute or workouts.</p>
-                    </div>
-                </div>
-                
-                <div class="benefit-item hidden-el" style="transition-delay: 100ms;">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Stay Ahead in Your Field</h3>
-                        <p>Consume 3x more industry content without increasing your reading time.</p>
-                    </div>
-                </div>
-                
-                <div class="benefit-item hidden-el" style="transition-delay: 200ms;">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Apply Knowledge Immediately</h3>
-                        <p>Get actionable insights tailored to your current projects and challenges.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="cta" class="cta-section">
         <div style="position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: white; opacity: 0.05; border-radius: 50%;"></div>
         <div style="position: absolute; bottom: -50px; right: -50px; width: 300px; height: 300px; background: white; opacity: 0.05; border-radius: 50%;"></div>
         
         <div class="container hidden-el">
             <h2>Ready to Reclaim Your Time?</h2>
-            <p>Join 2,000+ professionals on the early access list. <strong>Get 3 months free</strong> when we launch.</p>
+            <p>Join 2,000+ professionals on the early access list. Get 3 months free when we launch.</p>
             <form class="email-form" onsubmit="handleSubmit(event)">
                 <input 
                     type="email" 
@@ -706,9 +527,8 @@
                     id="emailInput"
                     aria-label="Email address"
                 >
-                <button type="submit" class="btn btn-primary">Start Free Trial</button>
+                <button type="submit" class="btn btn-primary">Get Early Access</button>
             </form>
-            <p class="form-note">No credit card required. Join the waitlist for early access.</p>
             
             <div class="success-message" id="successMessage" style="display:none;">
                 🎉 <span style="color:#2d3748">Welcome aboard!</span> Check your inbox for the next steps.
@@ -740,39 +560,21 @@
             const successMsg = document.getElementById('successMessage');
             const btn = e.target.querySelector('button');
             
-            // Validate email format
-            if (!isValidEmail(email)) {
-                alert('Please enter a valid email address');
-                return;
-            }
-            
             // Simulate loading state
             btn.innerHTML = 'Signing up...';
-            btn.disabled = true;
             btn.style.opacity = '0.8';
             
             setTimeout(() => {
                 console.log('Email captured:', email);
                 successMsg.style.display = 'inline-block';
                 document.getElementById('emailInput').value = '';
-                btn.innerHTML = 'Start Free Trial';
-                btn.disabled = false;
+                btn.innerHTML = 'Get Early Access';
                 btn.style.opacity = '1';
-                
-                // Track conversion (you would replace with your analytics)
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'conversion', {'send_to': 'AW-XXXXX/YYYY'});
-                }
                 
                 setTimeout(() => {
                     successMsg.style.display = 'none';
                 }, 5000);
             }, 800);
-        }
-        
-        function isValidEmail(email) {
-            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(String(email).toLowerCase());
         }
 
         // Navbar Scroll Logic
@@ -796,4 +598,18 @@
             threshold: 0.1
         };
 
-        const observer = new IntersectionObserver((entries, observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-el');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hidden-el').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
